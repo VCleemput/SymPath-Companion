@@ -15,7 +15,7 @@ SGUI.show()
 
 _get_client(*)
 {
-    if WinExist("careconnect.exe")
+    if WinExist("ahk_execareconnect.exe")
         return "CareConnect"
     return faaltekst
 }
@@ -26,8 +26,8 @@ _get_suffix(*)
     if client = "CareConnect"
     {
         careconnectEI := UIA.ElementFromHandle("CareConnect ahk_exe careconnect.exe")
-        riziv := careconnectEI.ElementFromPath("KrK").Name
-        name := careconnectEI.ElementFromPath("KyK").Name
+        name := careconnectEI.ElementFromPath("KrK").Name
+        riziv := careconnectEI.ElementFromPath("KyK").Name
         return "/" . riziv . "/" . name
     }
     
